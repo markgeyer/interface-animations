@@ -1,21 +1,32 @@
 # Interface Animations
 A workshop created for [Blend Conference](http://blendconf.com) 2014.
 
-## Setup
+## After Effects setup
+Download and install a 30-day trial of [After Effects](https://creative.adobe.com/products/download/aftereffects). If you already have After Effects CS6, no need to download CC.
+
+In terminal (or equivalent) run the following commands:
+```
+$ git clone git@github.com:markgeyer/interface-animations.git
+$ cd interface-animations
+$ open .
+```
+Navigate to the two exercises: src/afx
+
+=================
+
+## AngularJS setup
 Download and install [node.js](http://nodejs.org) and [git](http://git-scm.com) if you don't already have these.
 
-Then, in terminal (or equivalent):
-
+In terminal (or equivalent) run the following commands:
 ```
 $ git clone git@github.com:markgeyer/interface-animations.git
 $ cd interface-animations
 $ sudo npm install -g bower
 ```
-Enter your computers password. Now worries, this is needed b/c you typed `sudo`.
+Enter your computers password. No worries, this is needed b/c you typed `sudo` :)
 ```
 $ bower install
 $ npm install
 $ gulp
 ```
-
-Running `gulp` launches [localhost:3000](http://localhost:3000) to the exercises needed for the AngularJS portion of the workshop.
+Running `gulp` will launch [localhost:3000](http://localhost:3000) that contains the exercises needed.
