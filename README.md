@@ -11,7 +11,7 @@ $ git clone git@github.com:markgeyer/interface-animations.git
 $ cd interface-animations
 $ sudo npm install -g bower
 ```
-Enter your computers password.
+Enter your computers password. Now worries, this is needed b/c you typed `sudo`.
 ```
 $ bower install
 $ npm install
