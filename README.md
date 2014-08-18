@@ -4,12 +4,15 @@ A workshop created for [Blend Conference](http://blendconf.com) 2014.
 ## Setup
 Download and install [node.js](http://nodejs.org) and [git](http://git-scm.com) if you don't already have these.
 
-Then, in terminal or equivalant:
+Then, in terminal (or equivalent):
 
 ```
 $ git clone git@github.com:markgeyer/interface-animations.git
 $ cd interface-animations
 $ sudo npm install -g bower
+```
+Enter your computers password.
+```
 $ bower install
 $ npm install
 $ gulp
