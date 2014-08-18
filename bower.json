@@ -1,0 +1,18 @@
+{
+  "name": "animation-workshop",
+  "version": "0.0.1",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "devDependencies": {
+    "angular": "1.2.21",
+    "angular-touch": "1.2.21",
+    "angular-animate": "1.2.21",
+    "angular-route": "1.2.21",
+    "fastclick": "~1.0.3",
+    "jquery": "2.1.1"
+  }
+}

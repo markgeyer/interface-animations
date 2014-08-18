@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <title>Animations with Angular</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body ontouchstart>
+
+  <div ng-controller="appController">
+
+    <button type="button" ng-click="boots()">hi</button>
+    <div class="boots" ng-class="{'fade-in-ani': isBootsShowing}"></div>
+    <div class="shoes" ng-class="{'move-over-ani': isBootsShowing}"></div>
+
+<!--     <p>There are {{feed.length}} posts here.</p>
+    <input type="search" ng-model="q" placeholder="filter posts...">
+    <ul>
+      <li ng-repeat="post in feed | filter:q">
+        <h2>{{post.name}} to {{post.to}}</h2>
+        <h4>{{post.time}}</h3>
+        <p>{{post.post}}</p>
+      </li>
+    </ul> -->
+
+  </div>
+
+<script type="text/javascript" src="js/libs.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>
