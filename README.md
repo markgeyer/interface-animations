@@ -7,12 +7,9 @@ Download and install a 30-day trial of [After Effects](https://creative.adobe.co
 In terminal (or equivalent) run the following commands:
 ```
 $ git clone git@github.com:markgeyer/interface-animations.git
-$ cd interface-animations
+$ cd interface-animations/src/afx
 $ open .
 ```
-Navigate to the two exercises: src/afx
-
-=================
 
 ## AngularJS setup
 Download and install [node.js](http://nodejs.org) and [git](http://git-scm.com) if you don't already have these.
