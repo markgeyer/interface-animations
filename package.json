@@ -1,11 +1,14 @@
 {
-  "name": "animation-workshop",
+  "name": "interface-animations",
   "version": "0.0.1",
-  "description": "We'll use AngularJS with ngAnimate and ngTouch to make a quick prototype. Includes Photoshop / After Effects files.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markgeyer/interface-animations"
+  },
+  "description": "",
   "author": "Mark Geyer",
   "license": "ISC",
   "dependencies": {
-    "font-awesome": "^4.1.0",
     "normalize.css": "^3.0.1"
   },
   "devDependencies": {
