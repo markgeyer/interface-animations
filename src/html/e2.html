@@ -1,0 +1,13 @@
+<section class="container">
+
+  <article>
+    <h2 class="tc">ng-swipe-left &amp; ng-swipe-right</h2>
+    <p>Make the sqaures cycle back and forth. You can do this by adding <b>ng-swipe-left</b> to the first square and <b>ng-swipe-right</b> to second. Then add a <b>ng-class</b> to each sqaure to call out the animations and expression.</p>
+  </article>
+
+  <article>
+    <div class="boxy violet first" ng-swipe-left="violet()" ng-class="{'move-left-ani': isGood}"></div>
+    <div class="boxy violet second" ng-swipe-right="violet()" ng-class="{'move-right-ani': isGood}"></div>
+  </article>
+
+</section>

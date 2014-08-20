@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Exercise 2
+   ========================================================================== */
+
+.boxy {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 1rem;
+  transform-style: preserve-3d;
+
+  &.violet {
+    background-color: violet;
+  }
+  &.first {
+    left: 50%;
+    transform: translate3d(-50%,0,0) rotateY(0) rotateZ(0) scale(1);
+  }
+  &.second {
+    left: 50%;
+    transform: translate3d(12%,0,0) rotateY(-85deg) rotateZ(90deg) scale(.9);
+    opacity: .3;
+  }
+}
+
+
+
+
+
+/* Animations
+   ========================================================================== */
+
+.move-right-ani {
+  animation: moveLeftMeow .3s forwards;
+
+  &-remove {
+    animation: moveRightMeow .3s forwards;
+  }
+}
+
+@keyframes moveLeftMeow {
+  from {
+    transform: translate3d(12%,0,0) rotateY(-85deg) rotateZ(90deg) scale(.9);
+    opacity: .3;
+  }
+  to {
+    transform: translate3d(-50%,0,0) rotateY(0) rotateZ(0) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes moveRightMeow {
+  from {
+    transform: translate3d(-50%,0,0) rotateY(0) rotateZ(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translate3d(12%,0,0) rotateY(-85deg) rotateZ(90deg) scale(.9);
+    opacity: .3;
+  }
+}
+
+
+
+
+.move-left-ani {
+  animation: moveLeftBark .3s forwards;
+
+  &-remove {
+    animation: moveRightBark .3s forwards;
+  }
+}
+
+@keyframes moveLeftBark {
+  from {
+    transform: translate3d(-50%,0,0) rotateY(0) rotateZ(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translate3d(-112%,0,0) rotateY(85deg) rotateZ(-90deg) scale(.9);
+    opacity: .3;
+  }
+}
+@keyframes moveRightBark {
+  from {
+    transform: translate3d(-112%,0,0) rotateY(85deg) rotateZ(0) scale(.9);
+    opacity: .3;
+  }
+  to {
+    transform: translate3d(-50%,0,0) rotateY(0) rotateZ(90deg) scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+

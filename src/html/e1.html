@@ -1,0 +1,17 @@
+<section class="container">
+
+  <article>
+    <h2 class="tc">ng-class &amp; ng-click</h2>
+    <p class="tc">Make the orange box appear using <b>ng-class</b> and <b>ng-click</b>.</p>
+  </article>
+
+  <article>
+    <div class="box orange" ng-class="{'fade-in-ani': isOrange}"></div>
+    <button type="button" ng-click="orange()">go</button>
+  </article>
+
+  <article>
+    <div class="box green" ng-class="{'fade-in-ani': !isOrange}"></div>
+  </article>
+
+</section>

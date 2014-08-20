@@ -1,0 +1,18 @@
+<section class="container">
+
+  <article>
+    <h2 class="tc">Subtitle</h2>
+    <p>(what to do)</p>
+  </article>
+
+  <article>
+    <p>There are {{feed.length}} posts here.</p>
+    <input type="text" ng-model="posts" placeholder="Search">
+    <div ng-repeat="post in feed | filter:posts">
+      <h2>{{post.name}} to {{post.to}}</h2>
+      <p>{{post.time}}<br>
+      {{post.post}}</p>
+    </div>
+  </article>
+
+</section>
