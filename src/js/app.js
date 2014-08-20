@@ -1,15 +1,103 @@
 (function(){
 
-  var app = angular.module('app', ['ngRoute', 'ngAnimate', 'ngTouch']);
+  angular.module('app', ['ngRoute', 'ngAnimate', 'ngTouch'])
 
-  app.controller('appController', ['$scope', function($scope) {
-    console.log('appController started');
 
-    $scope.isBootsShowing = false;
 
-    $scope.boots = function(){
-      $scope.isBootsShowing = !$scope.isBootsShowing;
+
+
+
+  // Router setup
+  .config(['$routeProvider', function ($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'e0.html',
+        controller: 'exerciseZeroController'
+      })
+      .when('/1', {
+        templateUrl: 'e1.html',
+        controller: 'exerciseOneController'
+      })
+      .when('/2', {
+        templateUrl: 'e2.html',
+        controller: 'exerciseTwoController'
+      })
+      .when('/3', {
+        templateUrl: 'e3.html',
+        controller: 'exerciseThreeController'
+      })
+      .when('/4', {
+        templateUrl: 'e4.html',
+        controller: 'exerciseFourController'
+      })
+      .otherwise({ redirectTo: '/' });
+  }])
+
+
+
+
+
+
+  // Start
+  .controller('startController', ['$scope', '$location', function ($scope, $location) {
+    console.log('startController started');
+
+    $scope.isActive = function(route) {
+      return route === $location.path();
+    }
+
+  }])
+
+
+
+
+
+
+  // e0 controller, welcome :)
+  .controller('exerciseZeroController', ['$scope', function ($scope) {}])
+
+
+
+
+
+
+  // e1 controller
+  .controller('exerciseOneController', ['$scope', function ($scope) {
+    console.log('exerciseOneController started');
+
+    $scope.orange = function(){
+      $scope.isOrange = !$scope.isOrange;
     };
+
+  }])
+
+
+
+
+
+
+  // e2 controller
+  .controller('exerciseTwoController', ['$scope', function ($scope) {
+    console.log('exerciseTwoController started');
+
+    $scope.violet = function(){
+      $scope.isGood = !$scope.isGood;
+    };
+
+  }])
+
+
+
+
+
+
+  // e3 controller
+  .controller('exerciseThreeController', ['$scope', function ($scope) {
+    console.log('exerciseThreeController started');
+
+
+
+
 
     $scope.feed = [
       {
@@ -32,7 +120,21 @@
       }
     ]
 
+  }])
+
+
+
+
+
+
+  // e4 controller
+  .controller('exerciseFourController', ['$scope', function ($scope) {
+    console.log('exerciseFourController started');
+
   }]);
+
+
+
 
   FastClick.attach(document.body);
 
