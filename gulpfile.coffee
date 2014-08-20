@@ -13,26 +13,31 @@ gulp.task 'init', ->
   fs.mkdirSync './www' unless fs.existsSync('./www')
   fs.mkdirSync './www/css' unless fs.existsSync('./www/css')
   fs.mkdirSync './www/js' unless fs.existsSync('./www/js')
-  gulp.src('./src/img/**').pipe gulp.dest('./www' + '/img')
+  gulp.src('./src/img/**').pipe gulp.dest('./www/img')
+  gulp.src('./src/html/**').pipe gulp.dest('./www')
 
 gulp.task 'clean', ->
   gulp.src('./www', read: false)
   .pipe rimraf()
 
 gulp.task 'html', ->
-  gulp.src('./src/*.html')
+  gulp.src([
+    './src/*.html'
+    './src/html/*.html'
+  ])
   .pipe gulp.dest('./www')
   .pipe browserSync.reload(stream: true)
 
 gulp.task 'style', ->
   gulp.src([
     './node_modules/normalize.css/normalize.css'
+    './node_modules/font-awesome/css/font-awesome.css'
     './src/scss/*.scss'
   ])
   .pipe sass()
   .pipe prefix('last 1 version', '> 1%', 'ie 10', 'ie 11', 'iOS 6', 'iOS 7', 'Android 4', cascade: true)
   .pipe concat('style.css')
-  .pipe minifycss()
+  .pipe minifycss({keepSpecialComments: 0})
   .pipe gulp.dest('./www/css')
   .pipe browserSync.reload(stream: true)
 
@@ -62,7 +67,7 @@ gulp.task 'browser-sync', ->
     baseDir: './www'
 
 gulp.task 'default', ['init', 'html', 'style', 'bower', 'scripts', 'browser-sync'], ->
-  gulp.watch './src/*.html', ['html']
+  gulp.watch ['./src/*.html', './src/html/*.html'], ['html']
   gulp.watch './src/scss/**/*.scss', ['style']
   gulp.watch './bower_components/**/*.js', ['bower']
   gulp.watch './src/js/*.js', ['scripts']
