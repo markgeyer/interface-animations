@@ -1,4 +1,9 @@
 bower_components
 node_modules
 src/afx/pics/*
+src/afx/export/00_dribbble_alpha.mov
+src/afx/export/00_dribbble.mov
+src/afx/export/00_dribbble.psd
+src/afx/export/00_dribbble.gif
+src/afx/export/render.mp4
 www
