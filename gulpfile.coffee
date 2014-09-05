@@ -31,7 +31,6 @@ gulp.task 'html', ->
 gulp.task 'style', ->
   gulp.src([
     './node_modules/normalize.css/normalize.css'
-    './node_modules/font-awesome/css/font-awesome.css'
     './src/scss/*.scss'
   ])
   .pipe sass()
