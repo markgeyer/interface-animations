@@ -8,10 +8,10 @@
     "bower_components"
   ],
   "devDependencies": {
-    "angular": "1.2.21",
-    "angular-touch": "1.2.21",
-    "angular-animate": "1.2.21",
-    "angular-route": "1.2.21",
+    "angular": "1.2.23",
+    "angular-touch": "1.2.23",
+    "angular-animate": "1.2.23",
+    "angular-route": "1.2.23",
     "fastclick": "~1.0.3",
     "jquery": "2.1.1"
   }
