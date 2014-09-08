@@ -3,10 +3,6 @@
   angular.module('app', ['ngRoute', 'ngAnimate', 'ngTouch'])
 
 
-
-
-
-
   // Router setup
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
@@ -45,6 +41,28 @@
     $scope.isActive = function(route) {
       return route === $location.path();
     }
+
+    $scope.isMenuShowing = true;
+
+    $scope.closeExerciseMenu = function(){
+      if(window.innerWidth <= 600) {
+        $scope.isMenuShowing = false;
+      }
+    };
+
+    $scope.toggleExerciseMenu = function(){
+      $scope.isMenuShowing = !$scope.isMenuShowing;
+    };
+
+    $(window).resize(function(){
+      $scope.$apply(function() {
+        if(window.innerWidth >= 600) {
+          $scope.isMenuShowing = true;
+        } else {
+          $scope.isMenuShowing = false;
+        }
+      });
+    });
 
   }])
 
@@ -135,7 +153,9 @@
 
 
 
-
-  FastClick.attach(document.body);
+  window.addEventListener('load', function() {
+    FastClick.attach(document.body);
+    console.log("123");
+  }, false);
 
 }).call(this);
