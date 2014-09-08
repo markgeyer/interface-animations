@@ -1,18 +1,12 @@
 <section class="container">
 
   <article>
-    <h2 class="tc">Subtitle</h2>
-    <p>(what to do)</p>
+    <h1>ng-repeat &amp; ng-model</h1>
+    <p>List the provided JSON data using <b>ng-repeat</b> and filter search using the input as an <b>ng-model</b>.</p>
   </article>
 
   <article>
-    <p>There are {{feed.length}} posts here.</p>
-    <input type="text" ng-model="posts" placeholder="Search">
-    <div ng-repeat="post in feed | filter:posts">
-      <h2>{{post.name}} to {{post.to}}</h2>
-      <p>{{post.time}}<br>
-      {{post.post}}</p>
-    </div>
+    <input type="text" placeholder="Search">
   </article>
 
 </section>
