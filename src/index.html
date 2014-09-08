@@ -8,12 +8,19 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
   <title>Animations in Angular</title>
   <link rel="stylesheet" href="css/style.css">
-<!--   <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'> -->
 </head>
-<body ontouchstart>
+<body ontouchstart ng-controller="startController">
 
-  <section ng-controller="startController">
-    <a href="#/" title="AngularJS" class="angular-logo">
+  <section class="mobile-menu" ng-hide="isMenuShowing">
+    <h3>AngularJS</h3>
+    <a href class="menu-link" ng-click="toggleExerciseMenu()">Menu</a>
+  </section>
+
+  <section class="col-1" ng-show="isMenuShowing">
+
+    <a href class="menu-link" ng-hide="!isMenuShowing" ng-click="toggleExerciseMenu()">Close</a>
+
+    <a href="#/" title="AngularJS" class="angular-logo" ng-click="closeExerciseMenu()">
       <svg xmlns="http://www.w3.org/2000/svg" width="100" height="106">
         <polygon fill="#B3B3B3" points="49.8,0 0,17.5 7.9,82.8 49.9,105.9 92.1,82.5 100,17.2"/>
         <polygon fill="#A6120D" points="95,21 49.7,5.6 49.7,100.4 87.7,79.4"/>
@@ -26,19 +33,19 @@
       </svg>
     </a>
 
-    <h1 class="tc">AngularJS Exercises</h1>
+    <h2 class="tc">AngularJS</h2>
 
     <ul class="nav">
-      <li><a ng-class="{on :isActive('/1')}" href="#/1">1</a></li>
-      <li><a ng-class="{on :isActive('/2')}" href="#/2">2</a></li>
-      <li><a ng-class="{on :isActive('/3')}" href="#/3">3</a></li>
-      <li><a ng-class="{on :isActive('/4')}" href="#/4">4</a></li>
+      <li><a ng-class="{on :isActive('/1')}" ng-click="closeExerciseMenu()" href="#/1">Exercise 1</a></li>
+      <li><a ng-class="{on :isActive('/2')}" ng-click="closeExerciseMenu()" href="#/2">Exercise 2</a></li>
+      <li><a ng-class="{on :isActive('/3')}" ng-click="closeExerciseMenu()" href="#/3">Exercise 3</a></li>
+      <li><a ng-class="{on :isActive('/4')}" ng-click="closeExerciseMenu()" href="#/4">Exercise 4</a></li>
     </ul>
+
   </section>
 
-  <ng-view></ng-view>
+  <ng-view class="col-2"></ng-view>
 
-  <script type="text/javascript" src="js/libs.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 </html>
