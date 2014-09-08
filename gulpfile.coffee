@@ -40,22 +40,16 @@ gulp.task 'style', ->
   .pipe gulp.dest('./www/css')
   .pipe browserSync.reload(stream: true)
 
-gulp.task 'bower', ->
+gulp.task 'scripts', ->
   gulp.src([
     './bower_components/angular/angular.js'
     './bower_components/angular-route/angular-route.js'
     './bower_components/angular-animate/angular-animate.js'
     './bower_components/angular-touch/angular-touch.js'
-    './bower_components/fastclick/lib/fastclick.js'
     './bower_components/jquery/dist/jquery.js'
+    './bower_components/fastclick/lib/fastclick.js'
+    './src/js/*.js'
   ])
-  .pipe concat('libs.js')
-  .pipe uglify()
-  .pipe gulp.dest('./www/js')
-  .pipe browserSync.reload(stream: true)
-
-gulp.task 'scripts', ->
-  gulp.src('./src/js/*.js')
   .pipe concat('scripts.js')
   .pipe uglify()
   .pipe gulp.dest('./www/js')
@@ -65,8 +59,8 @@ gulp.task 'browser-sync', ->
   browserSync server:
     baseDir: './www'
 
-gulp.task 'default', ['init', 'html', 'style', 'bower', 'scripts', 'browser-sync'], ->
+gulp.task 'default', ['init', 'html', 'style', 'scripts', 'browser-sync'], ->
   gulp.watch ['./src/*.html', './src/html/*.html'], ['html']
   gulp.watch './src/scss/**/*.scss', ['style']
-  gulp.watch './bower_components/**/*.js', ['bower']
+  gulp.watch './bower_components/**/*.js', ['scripts']
   gulp.watch './src/js/*.js', ['scripts']
