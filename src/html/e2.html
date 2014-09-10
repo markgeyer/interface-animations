@@ -2,12 +2,55 @@
 
   <article>
     <h1>ng-swipe-left &amp; ng-swipe-right</h1>
-    <p>Make the sqaures cycle back and forth. You can do this by adding <b>ng-swipe-left</b> to the first square and <b>ng-swipe-right</b> to second. Then add a <b>ng-class</b> to each sqaure to call out the animations and expression.</p>
+    <p>Let's swipe to see some additional info. You can do this by adding <b>ng-swipe-left</b> and <b>ng-swipe-right</b> to the header below. Then add an <b>ng-class</b> to each slide and indicator to call out the CSS class and expression.</p>
   </article>
 
   <article>
-    <div class="boxy violet first" ng-swipe-left="violet()" ng-class="{'move-left-ani': isGood}"></div>
-    <div class="boxy violet second" ng-swipe-right="violet()" ng-class="{'move-right-ani': isGood}"></div>
+
+    <div class="phone-container">
+      <header class="autobot" ng-swipe-left="" ng-swipe-right="">
+
+        <!-- slide 1 -->
+        <section class="slide-01" ng-class="">
+          <img src="img/optimus.jpg" alt="Optimus Prime" width="70">
+          <h2>Optimus Prime</h2>
+          <h4>Autobot Commander</h4>
+        </section>
+
+        <!-- slide 2
+        <section class="slide-02" ng-class="">
+          <p class="quote">"Freedom is the right<br>of all sentient beings."</p>
+          <div class="grid">
+            <ul>
+              <li class="grid-cell size-1of4">
+                <p>Strength</p>
+                <h2>10</h2>
+              </li>
+              <li class="grid-cell size-1of4">
+                <p>Speed</p>
+                <h2>10</h2>
+              </li>
+              <li class="grid-cell size-1of4">
+                <p>Courage</p>
+                <h2>10</h2>
+              </li>
+              <li class="grid-cell size-1of4">
+                <p>Skill</p>
+                <h2>10</h2>
+              </li>
+            </ul>
+          </div>
+        </section> -->
+
+        <!-- page indicators -->
+        <ul class="page-indicators">
+          <li ng-class=""></li>
+          <li ng-class=""></li>
+        </ul>
+
+      </header>
+    </div>
+
   </article>
 
 </section>
