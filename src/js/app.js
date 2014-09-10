@@ -145,9 +145,21 @@
   .controller('exerciseFourController', ['$scope', function ($scope) {
     console.log('exerciseFourController started');
 
+    $scope.isModal = false;
 
+    $scope.submitForm = function(){
+      $scope.isModal = false;
+      $scope.isSubmit = true;
+    };
 
+    $scope.closeForm = function(){
+      $scope.isModal = false;
+    };
 
+    $scope.openForm = function(){
+      $scope.isModal = true;
+      $scope.isSubmit = false;
+    };
 
   }]);
 
