@@ -2,95 +2,121 @@
    Exercise 2
    ========================================================================== */
 
-.boxy {
-  position: absolute;
-  width: 200px;
+.phone-container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 320px;
+  user-select: none;
+}
+
+.autobot {
+  position: relative;
+  padding-top: 2rem;
   height: 200px;
-  margin-bottom: 1rem;
-  transform-style: preserve-3d;
+  background: #4eb5e7 url('../img/iphone-status-bar-white.png') no-repeat;
+  background-size: 100%;
+  text-align: center;
+  color: white;
+  overflow: hidden;
 
-  &.violet {
-    background-color: violet;
-  }
-  &.first {
-    left: 50%;
-    transform: translate3d(-50%,0,0) rotateY(0) rotateZ(0) scale(1);
-  }
-  &.second {
-    left: 50%;
-    transform: translate3d(12%,0,0) rotateY(-85deg) rotateZ(90deg) scale(.9);
-    opacity: .3;
-  }
-}
-
-
-
-
-
-/* Animations
-   ========================================================================== */
-
-.move-right-ani {
-  animation: moveLeftMeow .3s forwards;
-
-  &-remove {
-    animation: moveRightMeow .3s forwards;
-  }
-}
-
-@keyframes moveLeftMeow {
-  from {
-    transform: translate3d(12%,0,0) rotateY(-85deg) rotateZ(90deg) scale(.9);
-    opacity: .3;
-  }
-  to {
-    transform: translate3d(-50%,0,0) rotateY(0) rotateZ(0) scale(1);
+  .slide-01 {
+    position: absolute;
+    width: 100%;
+    transform: translate(0,0);
+    transition-property: transform, opacity;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(0,1,1,1);
     opacity: 1;
+
+    img {
+      border: 5px solid rgba(0,0,0,.05);
+      background-size: 100%;
+      border-radius: 50%;
+    }
+
+    h2, h4 {
+      margin: 0;
+      font-weight: 400;
+    }
+
+    h4 {
+      color: rgba(255,255,255,.7);
+    }
+
+    &.swiped {
+      transform: translate(-100%,0);
+      opacity: .4;
+    }
   }
-}
-@keyframes moveRightMeow {
-  from {
-    transform: translate3d(-50%,0,0) rotateY(0) rotateZ(0) scale(1);
+
+  .slide-02 {
+    position: absolute;
+    width: 100%;
+    transform: translate(0,0);
+    transition-property: transform, opacity;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(0,1,1,1);
     opacity: 1;
+
+    .quote {
+      margin-top: .5rem;
+      font-weight: 400;
+    }
+
+    ul {
+      width: 100%;
+      list-style: none;
+      margin: 0;
+      padding-left: 0;
+
+      li {
+        display: inline-block;
+        border-right: 1px solid rgba(255,255,255,.3);
+        text-align: center;
+
+        &:last-child {
+          border-right: none;
+        }
+
+        p {
+          margin: 0;
+          font-weight: 400;
+          color: rgba(255,255,255,.7);
+        }
+
+        h2 {
+          margin: 0;
+        }
+      }
+    }
+
+    &.swiped {
+      transform: translate(100%,0);
+      opacity: .4;
+    }
   }
-  to {
-    transform: translate3d(12%,0,0) rotateY(-85deg) rotateZ(90deg) scale(.9);
-    opacity: .3;
+
+  .page-indicators {
+    position: absolute;
+    bottom: 6px;
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin: 0 .125rem;
+      opacity: 1;
+      background: white;
+      border-radius: 50%;
+
+      &.off {
+        opacity: .4;
+      }
+    }
   }
 }
-
-
-
-
-.move-left-ani {
-  animation: moveLeftBark .3s forwards;
-
-  &-remove {
-    animation: moveRightBark .3s forwards;
-  }
-}
-
-@keyframes moveLeftBark {
-  from {
-    transform: translate3d(-50%,0,0) rotateY(0) rotateZ(0) scale(1);
-    opacity: 1;
-  }
-  to {
-    transform: translate3d(-112%,0,0) rotateY(85deg) rotateZ(-90deg) scale(.9);
-    opacity: .3;
-  }
-}
-@keyframes moveRightBark {
-  from {
-    transform: translate3d(-112%,0,0) rotateY(85deg) rotateZ(0) scale(.9);
-    opacity: .3;
-  }
-  to {
-    transform: translate3d(-50%,0,0) rotateY(0) rotateZ(90deg) scale(1);
-    opacity: 1;
-  }
-}
-
-
-
 
