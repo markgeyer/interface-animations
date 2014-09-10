@@ -98,9 +98,6 @@
   .controller('exerciseTwoController', ['$scope', function ($scope) {
     console.log('exerciseTwoController started');
 
-    $scope.violet = function(){
-      $scope.isGood = !$scope.isGood;
-    };
 
   }])
 
@@ -115,27 +112,26 @@
 
 
 
-
-
-    $scope.feed = [
-      {
-        name: 'Tooth fairy',
-        to: 'Mommy',
-        time: '2 minutes ago',
-        post: 'Testing this post content. See it works.'
-      },
-      {
-        name: 'Mama Mirabelle',
-        to: 'Thomas',
-        time: '2 hours ago',
-        post: 'Testing this could be dangurous.'
-      },
-      {
-        name: 'Tommy Tangles ',
-        to: 'Jimmy',
-        time: '2 days ago',
-        post: 'Oh nos. I think this might work.'
-      }
+    $scope.transformers = [
+      { name: 'Brawl' },
+      { name: 'Breakdown' },
+      { name: 'Megatron' },
+      { name: 'Shockwave' },
+      { name: 'Skywarp' },
+      { name: 'Soundwave' },
+      { name: 'Starscream' },
+      { name: 'Thundercracker' },
+      { name: 'Arcee' },
+      { name: 'Bumblebee' },
+      { name: 'Ironhide' },
+      { name: 'Jazz' },
+      { name: 'Jetfire' },
+      { name: 'Optimus Prime' },
+      { name: 'Ratchet' },
+      { name: 'Seibertron' },
+      { name: 'Sideswipe' },
+      { name: 'Silverbolt' },
+      { name: 'Warpath' }
     ]
 
   }])
@@ -148,6 +144,10 @@
   // e4 controller
   .controller('exerciseFourController', ['$scope', function ($scope) {
     console.log('exerciseFourController started');
+
+
+
+
 
   }]);
 
