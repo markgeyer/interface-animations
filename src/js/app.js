@@ -155,7 +155,6 @@
 
   window.addEventListener('load', function() {
     FastClick.attach(document.body);
-    console.log("123");
   }, false);
 
 }).call(this);
