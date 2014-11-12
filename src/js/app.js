@@ -7,8 +7,7 @@
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'e0.html',
-        controller: 'exerciseZeroController'
+        templateUrl: 'e0.html'
       })
       .when('/1', {
         templateUrl: 'e1.html',
@@ -21,10 +20,6 @@
       .when('/3', {
         templateUrl: 'e3.html',
         controller: 'exerciseThreeController'
-      })
-      .when('/4', {
-        templateUrl: 'e4.html',
-        controller: 'exerciseFourController'
       })
       .otherwise({ redirectTo: '/' });
   }])
@@ -71,14 +66,6 @@
 
 
 
-  // e0 controller, welcome :)
-  .controller('exerciseZeroController', ['$scope', function ($scope) {}])
-
-
-
-
-
-
   // e1 controller
   .controller('exerciseOneController', ['$scope', function ($scope) {
     console.log('exerciseOneController started');
@@ -97,6 +84,19 @@
   // e2 controller
   .controller('exerciseTwoController', ['$scope', function ($scope) {
     console.log('exerciseTwoController started');
+
+    $scope.isPageOne = true;
+    $scope.isPageTwo = false;
+
+    $scope.toPageOne = function() {
+      $scope.isPageOne = true;
+      $scope.isPageTwo = false;
+    };
+
+    $scope.toPageTwo = function() {
+      $scope.isPageOne = false;
+      $scope.isPageTwo = true;
+    };
 
 
   }])
@@ -138,30 +138,6 @@
 
 
 
-
-
-
-  // e4 controller
-  .controller('exerciseFourController', ['$scope', function ($scope) {
-    console.log('exerciseFourController started');
-
-    $scope.isModal = false;
-
-    $scope.submitForm = function(){
-      $scope.isModal = false;
-      $scope.isSubmit = true;
-    };
-
-    $scope.closeForm = function(){
-      $scope.isModal = false;
-    };
-
-    $scope.openForm = function(){
-      $scope.isModal = true;
-      $scope.isSubmit = false;
-    };
-
-  }]);
 
 
 
